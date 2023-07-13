@@ -3,9 +3,10 @@ const app = require("./app");
 
 const { MONGO_URL } = process.env;
 
-mongoose.set('strictQuery', true);
+mongoose.set("strictQuery", true);
 
-mongoose.connect(MONGO_URL)
+mongoose
+  .connect(MONGO_URL)
   .then(() => {
     app.listen(3000);
     console.log("Database connection successful");
